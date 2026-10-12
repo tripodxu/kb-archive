@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# 运行时数据 —— 含 Cookie / 下载凭证，绝不入库
+config.yaml
+config.local.yaml
+*.cookie
+cookies.txt
+data/
+downloads/
+archive/
+
+# 日志与临时文件
+*.log
+*.tmp
+tmp/
+
+# 媒体产物
+*.mp4
+*.flv
+*.m4a
+*.mp3
+*.mkv
+*.webm
+*.srt
+*.ass
+
+# 模型缓存（faster-whisper）
+models/
+.cache/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 密钥
+.env
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# 本地笔记（分析产物，可选不跟踪）
+vault/
+inbox/
