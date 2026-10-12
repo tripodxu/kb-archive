@@ -4,7 +4,7 @@
 > **项目代号**：kb-archive
 > **部署目标**：单台 Linux VPS（2 vCPU / 1963 MiB RAM / 49 GiB 磁盘 / 无 GPU）
 >
-> **导航**：[README.md](README.md) 首页 ｜ [VISION.md](VISION.md) 愿景速览 ｜ [**docs/vision.md**](docs/vision.md) **愿景与需求** ｜ **本文** 规划 ｜ [docs/roadmap.md](docs/roadmap.md) 三条路线定义 ｜ [docs/download-layer-comparison.md](docs/download-layer-comparison.md) 下载层功能逐条对比 ｜ [docs/feasibility.md](docs/feasibility.md) 可行性与核实 ｜ [docs/mp-tools-docker.md](docs/mp-tools-docker.md) Docker 化调研 ｜ [docs/douyin-erma0.md](docs/douyin-erma0.md) 第四候选 ｜ [deploy/](deploy/README.md) 部署物料 ｜ [analysis/](analysis/README.md) PC 分析流水线
+> **导航**：[README.md](README.md) 首页 ｜ [VISION.md](VISION.md) 愿景速览 ｜ [**docs/vision.md**](docs/vision.md) **愿景与需求** ｜ [**docs/execution-plan.md**](docs/execution-plan.md) **施工单** ｜ [**docs/environment.md**](docs/environment.md) **环境事实与铁律** ｜ **本文** 规划 ｜ [docs/roadmap.md](docs/roadmap.md) 三条路线定义 ｜ [docs/download-layer-comparison.md](docs/download-layer-comparison.md) 下载层功能逐条对比 ｜ [docs/feasibility.md](docs/feasibility.md) 可行性与核实 ｜ [docs/mp-tools-docker.md](docs/mp-tools-docker.md) Docker 化调研 ｜ [docs/douyin-erma0.md](docs/douyin-erma0.md) 第四候选 ｜ [deploy/](deploy/README.md) 部署物料 ｜ [analysis/](analysis/README.md) PC 分析流水线
 
 > ⚠️ **v2.0 变更**：用户补充了完整愿景（自下载 / 保存 / 自行整理 / 多媒介 / 本地化）
 > 与**近期目标（抖音 + B站 + 公众号的服务器下载功能，必须可扩展）**。
@@ -150,7 +150,9 @@
 | S5 落盘即归档 | 下载落 `download_history.json` | 无 schema、无索引、无去重语义 |
 | 近期「必须可扩展」 | 单体 Flask，平台逻辑与路由耦合 | 加平台要动核心文件 |
 
-**决策（提案）**：**新增一个轻量「归档中枢 kb-hub」容器，作为门面 + 资产索引，不重写抓取逻辑。**
+**决策（✅ 已定 2026-10-12，用户答复 Q0「要做」）**：**新增一个轻量「归档中枢 kb-hub」容器，作为门面 + 资产索引，不重写抓取逻辑。**
+> 具体施工由**执行 agent** 承担 → 逐项任务、验收标准、回滚步骤见 **[docs/execution-plan.md](docs/execution-plan.md)**。
+> 环境事实与不可违反的规则见 **[docs/environment.md](docs/environment.md)**。
 
 ```
 入口（CLI / Web UI / AI HTTP）
@@ -189,8 +191,10 @@
 - **直接把 hub 做成 mp-tools 的插件**：需要改上游 Flask 路由，破坏「私有 fork 只做最小补丁」的策略
 - **继续用 mp-tools 原生 UI 不做中枢**：放弃 S2/S3/S5 与全部可扩展性，与近期目标冲突
 
-**待确认**：请用户确认是否接受这个薄门面方案。若倾向「不要中枢，只要 mp-tools 面板」，
-则 G9–G11 需从目标中删除，Phase 2/7 取消。
+**状态**：✅ **已采纳**（2026-10-12，用户答复 Q0：「要做」）。
+
+若后续要推翻，必须回答「那 G9–G11（多入口统一 / 资产索引去重 / 可扩展平台层）怎么办」——
+这三个目标与 hub 是绑定关系，砍掉 hub 就等于砍掉它们。
 
 ---
 
@@ -498,8 +502,10 @@ kb-archive/                       # 本仓库（GitHub）
 | 2.6 | adapter 协议 + 注册表 + 一个 `noop` 示例 adapter | `hub/adapters/base.py` |
 | 2.7 | 落盘规范：`<platform>/<author>/<asset_id>/` 目录 + `meta.json` 原子写 | `hub/storage/filesystem.py` |
 | 2.8 | 最小任务 worker（轮询 SQLite，无 Redis/Celery） | `hub/workers/poller.py` |
-| 2.9 | Dockerfile + compose：`network_mode: bridge`，发布 `127.0.0.1:8020:8020`，内存上限 256 MiB | `deploy/hub/` |
+| 2.9 | Dockerfile + compose：`network_mode: bridge`，发布 `127.0.0.1:8018:8000`，内存上限 256 MiB | `deploy/hub/` |
 | 2.10 | **`POST /api/ingest` 端到端可用**（先用 noop adapter 也返回任务记录） | — |
+| 2.11 | 加入 `o2a-watchdog.py` 的 `CONTAINERS` 清单 + `backup-all.sh` | — |
+| 2.12 | `kb verify`：比对索引与磁盘实际文件，双向报告差异（R15 检测手段） | `hub/cli.py` |
 
 **验收标准**
 - `curl -XPOST /api/ingest -d '{"url":"https://www.bilibili.com/video/BV1xx"}'` 返回 200 + task_id
@@ -507,6 +513,9 @@ kb-archive/                       # 本仓库（GitHub）
 - 平台不认识的链接返回 400 + 可读错误，**不静默失败**（S6）
 - 常驻内存 ≤ 150 MiB
 - 新增一个空 adapter 只需 1 个文件 + 1 行注册（可扩展性验收）
+- `kb verify` 能查出「索引有但磁盘没有」与「磁盘有但索引没有」
+
+> 逐项施工步骤、验收命令、回滚演练 → **[docs/execution-plan.md](docs/execution-plan.md)**
 
 **回滚**：`docker compose down`，mp-tools 容器不受影响，Phase 1 成果全部保留
 
@@ -730,7 +739,7 @@ kb-archive/                       # 本仓库（GitHub）
 
 | # | 事项 | 阻塞什么 | 状态 |
 |---|---|---|---|
-| **Q0** | **是否接受 ADR-005 的 kb-hub 薄门面方案** | Phase 2 及之后全部 | ⏳ **本轮新提出，待确认** |
+| **Q0** | **是否接受 ADR-005 的 kb-hub 薄门面方案** | Phase 2 及之后全部 | ✅ **已定：要做**（2026-10-12）→ [docs/execution-plan.md](docs/execution-plan.md) |
 | Q1 | 抖音 / 小红书 / 快手的 Cookie | Phase 7.3 浏览器能力、Phase 11 | 用户表示后续提供 |
 | Q2 | 有无可扫码登录的公众号 | Phase 4.3 公众号全量 | 未确认 |
 | Q3 | 飞书自建应用 App ID/Secret | Phase 10 | 未建立（ADR-002 已推迟） |
@@ -785,6 +794,8 @@ kb-archive/                       # 本仓库（GitHub）
 |---|---|---|
 | [VISION.md](VISION.md) | 愿景速览（入口摘要） | §0.1 |
 | [**docs/vision.md**](docs/vision.md) | **【需求源头】愿景、场景约束 S1–S6、近期/远期目标、Q7–Q11** | §0.1 / ADR-005 |
+| **[docs/execution-plan.md](docs/execution-plan.md)** | **施工单：开工铁律、Phase 0–11 逐项任务、验收命令、回滚、DoD** | **§6 Phase 拆解** |
+| **[docs/environment.md](docs/environment.md)** | **环境事实与五条铁律、端口占用、复核清单** | **§7 资源预算** |
 | [docs/roadmap.md](docs/roadmap.md) | 三条路线 A/B/C 完整定义、需求打分、决策矩阵、决策状态台账 | §0 |
 | [docs/download-layer-comparison.md](docs/download-layer-comparison.md) | **下载层功能逐条对比 + 四候选矩阵 + 路线 C+** | §0 / Phase 11 |
 | [docs/feasibility.md](docs/feasibility.md) | 路线 A 可行性、资源硬约束、聊天记录纠错 | 附录 A |

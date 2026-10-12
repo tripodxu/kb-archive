@@ -7,7 +7,7 @@
 > 本文把两者并排放，并给出**第三条混合路线 C**。**2026-10-12 用户已裁定采用路线 C**（见 [../PLAN.md](../PLAN.md) ADR-001）。
 > 日期：2026-10-12
 >
-> **导航**：[../README.md](../README.md) 首页 ｜ [../VISION.md](../VISION.md) 愿景速览 ｜ [../PLAN.md](../PLAN.md) 规划 ｜ **本文** 路线定义 ｜ [download-layer-comparison.md](download-layer-comparison.md) 下载层功能逐条对比 ｜ [feasibility.md](feasibility.md) 可行性与核实 ｜ [mp-tools-docker.md](mp-tools-docker.md) Docker 化调研 ｜ [douyin-erma0.md](douyin-erma0.md) 第四候选调研
+> **导航**：[../README.md](../README.md) 首页 ｜ [../VISION.md](../VISION.md) 愿景速览 ｜ **[execution-plan.md](execution-plan.md)施工单** ｜ **[environment.md](environment.md)环境事实与铁律** ｜ [../PLAN.md](../PLAN.md) 规划 ｜ **本文** 路线定义 ｜ [download-layer-comparison.md](download-layer-comparison.md) 下载层功能逐条对比 ｜ [feasibility.md](feasibility.md) 可行性与核实 ｜ [mp-tools-docker.md](mp-tools-docker.md) Docker 化调研 ｜ [douyin-erma0.md](douyin-erma0.md) 第四候选调研
 >
 > ⚠️ **本文只解决「下载层选谁 + 分析层放哪」；用户 2026-10-12 之后提出的「多端统一入口 + 资产索引 + 可扩展平台层」需求，由 ADR-005 kb-hub 承接 → [../PLAN.md](../PLAN.md) ADR-005 与 [vision.md](vision.md)。**
 
@@ -211,6 +211,8 @@
 | [../VISION.md](../VISION.md) | 愿景速览（近期/远期目标、可扩展性四条硬定义） | §0 |
 | **[vision.md](vision.md)** | **【需求源头】愿景原话拆解、S1–S6 场景约束、Q7–Q11** | §0 / §5 |
 | [../PLAN.md](../PLAN.md) | 项目规划与实施计划（ADR-001 路线 C / ADR-005 kb-hub） | §0 / §3 |
+| **[execution-plan.md](execution-plan.md)** | **施工单**：Phase 0–11 逐项任务、验收命令、回滚 | §5 决策状态 |
+| **[environment.md](environment.md)** | **环境事实与五条铁律**：本路线为何必须剥离浏览器依赖 | §0 / §3 |
 | [**download-layer-comparison.md**](download-layer-comparison.md) | **下载层功能逐条对比（A vs C）+ 四个候选功能矩阵 + 抖音二选一专项 + 路线 C+** | §1 / §2 / §3.5 |
 | [feasibility.md](feasibility.md) | 路线 A 的完整可行性分析、组件源码级核实、聊天记录纠错 | §1 路线 A |
 | [mp-tools-docker.md](mp-tools-docker.md) | 路线 B 的 Docker 化调研、浏览器依赖逐文件实测、三种部署方案 | §1 路线 B |

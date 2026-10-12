@@ -7,7 +7,7 @@
 >
 > **⚠️ 本文是「路线 B」的调研记录。最终采用的「路线 C」= 本文的方案 B（砍浏览器精简版） + wechat-article-exporter 补位 + PC 分析层**，决策见 [../PLAN.md](../PLAN.md) ADR-001。
 >
-> **导航**：[../README.md](../README.md) ｜ [../VISION.md](../VISION.md) 愿景速览 ｜ [vision.md](vision.md) 需求源头 ｜ [../PLAN.md](../PLAN.md) 规划 ｜ [roadmap.md](roadmap.md) 三条路线 ｜ [download-layer-comparison.md](download-layer-comparison.md) 下载层逐条对比 ｜ [feasibility.md](feasibility.md) 可行性 ｜ **本文** mp-tools Docker 化 ｜ [douyin-erma0.md](douyin-erma0.md) 第四候选
+> **导航**：[../README.md](../README.md) ｜ [../VISION.md](../VISION.md) 愿景速览 ｜ [vision.md](vision.md) 需求源头 ｜ **[execution-plan.md](execution-plan.md)施工单** ｜ **[environment.md](environment.md)环境事实与铁律** ｜ [../PLAN.md](../PLAN.md) 规划 ｜ [roadmap.md](roadmap.md) 三条路线 ｜ [download-layer-comparison.md](download-layer-comparison.md) 下载层逐条对比 ｜ [feasibility.md](feasibility.md) 可行性 ｜ **本文** mp-tools Docker 化 ｜ [douyin-erma0.md](douyin-erma0.md) 第四候选
 >
 > 原始未脱敏版本：`../../docs/wechat-mp-tools-vps-plan.md`（母仓库内，**勿外传**）
 
@@ -334,6 +334,8 @@ git log -1 --format=%cd
 | [../VISION.md](../VISION.md) | 愿景速览（近期/远期目标、可扩展性四条硬定义） |
 | [vision.md](vision.md) | **【需求源头】** 愿景原话拆解、S1–S6 场景约束 |
 | [../PLAN.md](../PLAN.md) | 项目规划与实施计划（路线 C 决策记录、ADR-005、Phase 0–11） |
+| **[../docs/execution-plan.md](../docs/execution-plan.md)** | **施工单**：本文 Phase 1.2–1.3 的完整上下文与验收标准 | 
+| **[../docs/environment.md](../docs/environment.md)** | **环境事实与五条铁律**：网络约束、端口占用 |
 | [roadmap.md](roadmap.md) | 路线 A / B / C 定义与决策矩阵 |
 | [download-layer-comparison.md](download-layer-comparison.md) | mp-tools 与 TikTokDownloader / yutto / douyin_erma0 的功能逐条对比 |
 | [feasibility.md](feasibility.md) | 路线 A 可行性与资源硬约束 |

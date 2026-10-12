@@ -3,7 +3,7 @@
 > **定位**：本项目最早（2026-10-11）就被评估过的候选下载器，一度准备部署，后因 `pywebview` 构建失败**长期悬空**。
 > 本文补齐它的调研档案，明确它在**路线 C+** 中可选的位置（补抖音的话题/音乐/搜索/关注粉丝采集）。
 >
-> **导航**：[../README.md](../README.md) ｜ [../VISION.md](../VISION.md) ｜ [vision.md](vision.md) ｜ [../PLAN.md](../PLAN.md) ｜ [roadmap.md](roadmap.md) ｜ [download-layer-comparison.md](download-layer-comparison.md) ｜ [feasibility.md](feasibility.md) ｜ [mp-tools-docker.md](mp-tools-docker.md) ｜ **本文** 第四候选调研 ｜ [../deploy/README.md](../deploy/README.md)
+> **导航**：[../README.md](../README.md) ｜ [../VISION.md](../VISION.md) ｜ [vision.md](vision.md) ｜ **[execution-plan.md](execution-plan.md)施工单** ｜ **[environment.md](environment.md)环境事实与铁律** ｜ [../PLAN.md](../PLAN.md) ｜ [roadmap.md](roadmap.md) ｜ [download-layer-comparison.md](download-layer-comparison.md) ｜ [feasibility.md](feasibility.md) ｜ [mp-tools-docker.md](mp-tools-docker.md) ｜ **本文** 第四候选调研 ｜ [../deploy/README.md](../deploy/README.md)
 >
 > 关联：[download-layer-comparison.md](download-layer-comparison.md) §3.1 ｜ [roadmap.md](roadmap.md) ｜ [../PLAN.md](../PLAN.md) Phase 11.2
 
@@ -348,4 +348,6 @@ grep -n 'mount' backend/server.py                      # 单端口吐前端
 | [vision.md](vision.md) | **【需求源头】** S3「单个作品 vs 作者全部」正是 douyin_erma0 采集类型表要回答的 |
 | [mp-tools-docker.md](mp-tools-docker.md) | mp-tools Docker 化调研（本文是其姊妹篇） |
 | [../PLAN.md](../PLAN.md) | 项目规划；Phase 11.2 可选位 |
+| **[execution-plan.md](execution-plan.md)** | **施工单**：本项目里它的位置是 Phase 11.2 |
+| **[environment.md](environment.md)** | 环境事实与五条铁律 |
 | [../deploy/README.md](../deploy/README.md) | 部署物料位 |

@@ -2,7 +2,7 @@
 
 服务器侧部署文件存放处。按 Phase 逐步填充。
 
-> **导航**：[../README.md](../README.md) ｜ [../VISION.md](../VISION.md) 愿景速览 ｜ [../docs/vision.md](../docs/vision.md) 需求源头 ｜ [../PLAN.md](../PLAN.md) 规划 ｜ [../docs/roadmap.md](../docs/roadmap.md) 路线 ｜ [../docs/download-layer-comparison.md](../docs/download-layer-comparison.md) 功能对比 ｜ [../docs/mp-tools-docker.md](../docs/mp-tools-docker.md) Docker 化调研 ｜ [../docs/douyin-erma0.md](../docs/douyin-erma0.md) 第四候选 ｜ **本文** 部署物料 ｜ [../analysis/README.md](../analysis/README.md) PC 分析
+> **导航**：[../README.md](../README.md) ｜ [../VISION.md](../VISION.md) 愿景速览 ｜ [../docs/vision.md](../docs/vision.md) 需求源头 ｜ **[../docs/execution-plan.md](../docs/execution-plan.md)施工单** ｜ **[../docs/environment.md](../docs/environment.md)环境事实与铁律** ｜ [../PLAN.md](../PLAN.md) 规划 ｜ [../docs/roadmap.md](../docs/roadmap.md) 路线 ｜ [../docs/download-layer-comparison.md](../docs/download-layer-comparison.md) 功能对比 ｜ [../docs/mp-tools-docker.md](../docs/mp-tools-docker.md) Docker 化调研 ｜ [../docs/douyin-erma0.md](../docs/douyin-erma0.md) 第四候选 ｜ **本文** 部署物料 ｜ [../analysis/README.md](../analysis/README.md) PC 分析
 
 ## Phase 1 — mp-tools（下载主容器）
 
@@ -101,6 +101,8 @@ CMD ["python", "app.py", "--host", "0.0.0.0", "--port", "5200", "--no-browser"]
 | [../VISION.md](../VISION.md) | 愿景速览（近期/远期目标、可扩展性四条硬定义） |
 | [../docs/vision.md](../docs/vision.md) | **【需求源头】** 愿景原话拆解、S1–S6 场景约束 |
 | [../PLAN.md](../PLAN.md) | 项目规划（Phase 0–11 WBS、ADR-005、资产 schema、API 契约） |
+| **[../docs/execution-plan.md](../docs/execution-plan.md)** | **施工单**：每个 Phase 的具体产出文件与验收 |
+| **[../docs/environment.md](../docs/environment.md)** | **环境事实与五条铁律**：网络约束、端口占用 |
 | [../docs/roadmap.md](../docs/roadmap.md) | 三条路线定义与决策 |
 | [../docs/download-layer-comparison.md](../docs/download-layer-comparison.md) | 下载层功能逐条对比 + 抖音二选一专项 + C+ 建议 |
 | [../docs/mp-tools-docker.md](../docs/mp-tools-docker.md) | mp-tools Docker 化调研（本文 Dockerfile 的来源） |

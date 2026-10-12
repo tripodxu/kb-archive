@@ -8,7 +8,7 @@
 >
 > 日期：2026-10-12 ｜ 上级文档：[../PLAN.md](../PLAN.md) ｜ 路线定义：[roadmap.md](roadmap.md) ｜ 需求源头：[vision.md](vision.md)
 >
-> **导航**：[../README.md](../README.md) ｜ [../VISION.md](../VISION.md) ｜ [vision.md](vision.md) ｜ [../PLAN.md](../PLAN.md) ｜ [roadmap.md](roadmap.md) ｜ **本文** 下载层逐条对比 ｜ [feasibility.md](feasibility.md) ｜ [mp-tools-docker.md](mp-tools-docker.md) ｜ [douyin-erma0.md](douyin-erma0.md)
+> **导航**：[../README.md](../README.md) ｜ [../VISION.md](../VISION.md) ｜ [vision.md](vision.md) ｜ **[execution-plan.md](execution-plan.md)施工单** ｜ **[environment.md](environment.md)环境事实与铁律** ｜ [../PLAN.md](../PLAN.md) ｜ [roadmap.md](roadmap.md) ｜ **本文** 下载层逐条对比 ｜ [feasibility.md](feasibility.md) ｜ [mp-tools-docker.md](mp-tools-docker.md) ｜ [douyin-erma0.md](douyin-erma0.md)
 
 ---
 
@@ -255,6 +255,8 @@ sed -n '85,110p' /tmp/douyin_erma0/backend/lib/douyin/crawler.py   # 10 种 type
 | [../VISION.md](../VISION.md) | 愿景速览（近期/远期目标、可扩展性四条硬定义） |
 | [vision.md](vision.md) | **【需求源头】** 愿景原话拆解、S1–S6 场景约束 —— 本文回答的正是 S3（范围可选） |
 | [../PLAN.md](../PLAN.md) | 项目规划与实施计划（ADR 决策、Phase 0–11、风险登记册） |
+| **[execution-plan.md](execution-plan.md)** | 施工单：本文结论如何落到 Phase 3 / 5 / 11 |
+| **[environment.md](environment.md)** | 环境事实与五条铁律 |
 | [roadmap.md](roadmap.md) | 三条路线（A / B / C）定义、需求打分、决策矩阵 |
 | [feasibility.md](feasibility.md) | 资源硬约束、组件源码级核实、3 条错误说法纠正 |
 | [mp-tools-docker.md](mp-tools-docker.md) | mp-tools Docker 化：浏览器依赖逐文件实测、三种部署方案 |

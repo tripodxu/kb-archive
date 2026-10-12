@@ -138,7 +138,11 @@ VPS 只有 1.9 GiB 内存、**没有 GPU**，本项目实测过在此跑本地 L
 
 ## 项目状态
 
-**规划已定，开发待启动。** 当前处于 Phase 1 前置。
+**规划已定，开发待启动。** ADR-005（kb-hub 归档中枢）已于 2026-10-12 获批，当前处于 Phase 0 前置。
+
+> **要接手执行？先读这两份：**
+> **[docs/execution-plan.md](docs/execution-plan.md)**（施工单：逐项任务 + 验收命令 + 回滚）
+> **[docs/environment.md](docs/environment.md)**（环境事实 + 五条铁律）
 
 | 里程碑 | 内容 | 状态 |
 |---|---|---|
@@ -161,6 +165,8 @@ VPS 只有 1.9 GiB 内存、**没有 GPU**，本项目实测过在此跑本地 L
 | **[VISION.md](VISION.md)** | **愿景速览**（近期/远期目标、可扩展性的四条硬定义） | 先看这个 |
 | **[docs/vision.md](docs/vision.md)** | **【需求源头】** 愿景、场景约束 S1–S6、近期/远期目标、待澄清问题 Q7–Q11 | 开工前必读 |
 | **[PLAN.md](PLAN.md)** | **项目规划与实施计划** —— 三条路线速览、ADR-001~005 决策记录、架构、资产 schema、API 契约、Phase 0–11 WBS、风险登记册 | 开工前通读 |
+| **[docs/execution-plan.md](docs/execution-plan.md)** | **施工单** —— 给执行者：六条开工铁律、Phase 0–11 逐项任务、可复制的验收命令、回滚演练、DoD 清单 | **动手前必读** |
+| **[docs/environment.md](docs/environment.md)** | **环境事实与五条铁律** —— 主机规格、Docker 29 陷阱、防火墙规则、现有 10 容器、端口占用、开工复核清单 | **动手前必读** |
 | [docs/roadmap.md](docs/roadmap.md) | 三条路线 A/B/C 完整定义、逐需求打分、决策矩阵、决策状态台账 | 想知道「为什么是 C」 |
 | **[docs/download-layer-comparison.md](docs/download-layer-comparison.md)** | **下载层功能逐条对比（A vs C）+ 四个下载器能力矩阵 + 抖音二选一专项 + 路线 C+ 建议** | 想量化「C 到底差在哪」 |
 | [docs/feasibility.md](docs/feasibility.md) | 路线 A 可行性分析：资源实测、组件源码级核实、错误说法纠正 | 想看完整选型过程 |
@@ -168,6 +174,7 @@ VPS 只有 1.9 GiB 内存、**没有 GPU**，本项目实测过在此跑本地 L
 | [docs/douyin-erma0.md](docs/douyin-erma0.md) | douyin_erma0 完整调研 + **四个坑**（含「Dockerfile 未装 aria2」）与修法 | Phase 11.2 决策时 |
 | [deploy/README.md](deploy/README.md) | 部署物料位：Dockerfile 要点、网络约束（必须 `network_mode: bridge`） | Phase 1 / 2 实施时 |
 | [analysis/README.md](analysis/README.md) | PC 端分析流水线规划位 | Phase 9 规划时 |
+| [docs/ai-usage.md](docs/ai-usage.md) | AI 调用说明 + 可复制的 curl 示例 | Phase 8 产出 |
 | [docs/operations.md](docs/operations.md) | 运维手册 | Phase 6 产出 |
 
 > 本文各文档之间**已建立双向反向链接** —— 每份文档顶部都有「导航」行，文末都有「相关文档」表，可从任意一份跳到其余任意一份。

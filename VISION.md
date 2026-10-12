@@ -29,6 +29,8 @@
 | 文档 | 内容 |
 |---|---|
 | [docs/vision.md](docs/vision.md) | 完整愿景、场景约束 S1–S6、近期/远期目标、待澄清需求 |
+| **[docs/execution-plan.md](docs/execution-plan.md)** | **施工单** —— 交给执行者的逐项任务、验收命令与回滚方案 |
+| **[docs/environment.md](docs/environment.md)** | **环境事实与五条铁律** —— 动手前必读 |
 | [PLAN.md](PLAN.md) | 目标 G1–G12、ADR-001~005、Phase 0–11 任务分解 |
 | [docs/roadmap.md](docs/roadmap.md) | 三条路线 A/B/C 完整定义与决策矩阵 |
 | [docs/download-layer-comparison.md](docs/download-layer-comparison.md) | 下载层功能逐条对比、四个下载器能力矩阵 |

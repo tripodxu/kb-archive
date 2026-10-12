@@ -1,7 +1,7 @@
 # 愿景与需求定义
 
 > **文档状态**：v1.0 / 2026-10-12 / 用户口述愿景，本文档是项目的需求源头
-> **导航**：[README.md](../README.md) 首页 ｜ [**VISION.md**](../VISION.md) 愿景与需求 ｜ [PLAN.md](../PLAN.md) 实施计划 ｜ [docs/roadmap.md](roadmap.md) 三条路线 ｜ [docs/download-layer-comparison.md](download-layer-comparison.md) 下载层对比 ｜ [docs/feasibility.md](feasibility.md) 可行性 ｜ [docs/mp-tools-docker.md](mp-tools-docker.md) Docker 化调研 ｜ [docs/douyin-erma0.md](douyin-erma0.md) 第四候选 ｜ [../deploy/README.md](../deploy/README.md) 部署物料 ｜ [../analysis/README.md](../analysis/README.md) PC 分析
+> **导航**：[README.md](../README.md) 首页 ｜ [**VISION.md**](../VISION.md) 愿景与需求 ｜ [PLAN.md](../PLAN.md) 实施计划 ｜ **[execution-plan.md](execution-plan.md) 施工单** ｜ **[environment.md](environment.md) 环境事实与铁律** ｜ [docs/roadmap.md](roadmap.md) 三条路线 ｜ [docs/download-layer-comparison.md](download-layer-comparison.md) 下载层对比 ｜ [docs/feasibility.md](feasibility.md) 可行性 ｜ [docs/mp-tools-docker.md](mp-tools-docker.md) Docker 化调研 ｜ [docs/douyin-erma0.md](douyin-erma0.md) 第四候选 ｜ [../deploy/README.md](../deploy/README.md) 部署物料 ｜ [../analysis/README.md](../analysis/README.md) PC 分析
 
 ---
 
@@ -119,10 +119,12 @@ ADR-005 是对 ADR-001 的**收窄式细化**（下载层还是那套代码）�
 
 | 文档 | 内容 | 关联本文哪节 |
 |---|---|---|
-| [PLAN.md](../PLAN.md) | 目标 G1–G8、ADR-001~005、Phase 0–9 任务分解 | §3 / §5 |
+| [PLAN.md](../PLAN.md) | 目标 G1–G12、ADR-001~005、Phase 0–11 任务分解 | §3 / §5 |
+| **[execution-plan.md](execution-plan.md)** | **施工单**：S1–S6 落到哪个 Phase、每个 Phase 怎么验收 | **§2 场景约束表** |
+| **[environment.md](environment.md)** | **环境事实与五条铁律**：本愿景在 1.9 GiB 上的可实现边界 | **§3 近期目标** |
 | [docs/roadmap.md](roadmap.md) | 三条路线 A/B/C 完整定义与决策矩阵 | §5 |
 | [docs/download-layer-comparison.md](download-layer-comparison.md) | 下载层功能逐条对比、四个下载器矩阵 | §3 平台范围 |
-| [docs/douyin-erma0.md](douyin-erma0.md) | 抖音第四候选调研与三个必改坑 | §3 抖音 |
+| [docs/douyin-erma0.md](douyin-erma0.md) | 抖音第四候选调研与四个必改坑 | §3 抖音 |
 | [docs/feasibility.md](feasibility.md) | 资源硬约束（为什么分析层不能放 VPS） | §4 L1 |
 | [docs/mp-tools-docker.md](mp-tools-docker.md) | mp-tools 源码级调研，adapter 的代码来源 | §5 |
 | [../deploy/README.md](../deploy/README.md) | hub 容器的 Dockerfile 与 compose | §3 可扩展性 |

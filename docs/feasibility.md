@@ -6,7 +6,7 @@
 >
 > **⚠️ 本文是「路线 A」的完整可行性分析，是 2026-10-12 上午的选型过程记录。最终已改用路线 C**（mp-tools 下载层 + PC 分析层），决策见 [../PLAN.md](../PLAN.md) ADR-001。
 >
-> **导航**：[../README.md](../README.md) ｜ [../VISION.md](../VISION.md) 愿景速览 ｜ [vision.md](vision.md) 需求源头 ｜ [../PLAN.md](../PLAN.md) 规划 ｜ [roadmap.md](roadmap.md) 三条路线 ｜ [download-layer-comparison.md](download-layer-comparison.md) 下载层逐条对比 ｜ **本文** 可行性与组件核实 ｜ [mp-tools-docker.md](mp-tools-docker.md) Docker 化 ｜ [douyin-erma0.md](douyin-erma0.md) 第四候选
+> **导航**：[../README.md](../README.md) ｜ [../VISION.md](../VISION.md) 愿景速览 ｜ [vision.md](vision.md) 需求源头 ｜ **[execution-plan.md](execution-plan.md)施工单** ｜ **[environment.md](environment.md)环境事实与铁律** ｜ [../PLAN.md](../PLAN.md) 规划 ｜ [roadmap.md](roadmap.md) 三条路线 ｜ [download-layer-comparison.md](download-layer-comparison.md) 下载层逐条对比 ｜ **本文** 可行性与组件核实 ｜ [mp-tools-docker.md](mp-tools-docker.md) Docker 化 ｜ [douyin-erma0.md](douyin-erma0.md) 第四候选
 >
 > 原始未脱敏版本：`../../docs/knowledge-archive-feasibility.md`（母仓库内，**勿外传**）
 
@@ -334,6 +334,8 @@ README 还郑重声明：「不会利用您扫码登录的公众号进行任何�
 | [../VISION.md](../VISION.md) | 愿景速览（近期/远期目标、可扩展性硬定义） | §0 |
 | [vision.md](vision.md) | **【需求源头】** 愿景原话拆解、S1–S6 场景约束 | §0 / §7 |
 | [../PLAN.md](../PLAN.md) | 项目规划与实施计划（ADR-001 改用路线 C、ADR-005 kb-hub） | — |
+| **[execution-plan.md](execution-plan.md)** | **施工单**：本文的资源约束如何变成每个 Phase 的验收标准 | **§1 硬约束** |
+| **[environment.md](environment.md)** | **环境事实与五条铁律** | **§1 资源硬约束** |
 | [roadmap.md](roadmap.md) | **三条路线 A/B/C 的定义与决策** | 全文背景 |
 | [download-layer-comparison.md](download-layer-comparison.md) | 下载层功能逐条对比 + 四个候选功能矩阵 + **抖音二选一专项** + 路线 C+ | §2 B站、§4 yutto 勘误 |
 | [mp-tools-docker.md](mp-tools-docker.md) | 路线 B 的 Docker 化调研（浏览器依赖逐文件实测） | §8 缺失平台 |
